@@ -18,6 +18,7 @@ public class OrderControllerV1 {
 
         TraceStatus status = null;
         try {
+            //trace 정보
             trace.begin("OrderController.request()");
             orderService.orderItem(itemId);
             trace.end(status);
