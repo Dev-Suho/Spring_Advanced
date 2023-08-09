@@ -3,6 +3,7 @@ package spring.advanced.app.v1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import spring.advanced.trace.TraceStatus;
 import spring.advanced.trace.hellotrace.HelloTraceV1;
 
 @RestController
@@ -14,7 +15,10 @@ public class OrderControllerV1 {
 
     @GetMapping("/v1/request")
     public String request(String itemId) {
+
+        TraceStatus status = trace.begin("OrderController.request()");
         orderService.orderItem(itemId);
+        trace.end(status);
         return "item";
     }
 }
