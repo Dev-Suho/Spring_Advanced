@@ -10,14 +10,14 @@ class HelloTraceV1Test {
     @Test
     void log_begin() {
         HelloTraceV1 trace = new HelloTraceV1();
-        TraceStatus status = trace.begin("log start");
+        TraceStatus status = trace.begin("log start!");
         trace.end(status);
     }
 
     @Test
     void log_exception() {
         HelloTraceV1 trace = new HelloTraceV1();
-        TraceStatus status = trace.begin("log start");
+        TraceStatus status = trace.begin("log start!");
         trace.exception(status, new IllegalStateException());
     }
  }
