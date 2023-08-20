@@ -27,7 +27,7 @@ public class OrderRepositoryV4 {
             }
         };
 
-        template.execute("OrderRepository.orderItem");
+        template.execute("OrderRepositoryV4.orderItem");
 
     }
 
