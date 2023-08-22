@@ -86,7 +86,6 @@ public class ContextV1Test {
         contextV2.execute();
     }
 
-
     @Test
     void strategyV4() {
 
@@ -96,4 +95,5 @@ public class ContextV1Test {
         ContextV1 contextV2 = new ContextV1(() -> log.info("비즈니스 로직a 실행"));
         contextV2.execute();
     }
+
 }
