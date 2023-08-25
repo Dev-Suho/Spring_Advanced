@@ -19,12 +19,9 @@ public class OrderControllerV5 {
 
     @GetMapping("/v5/request")
     public String request(String itemId)  {
-        return traceTemplate.execute("OrderControllerV5.request", new TraceCallback<>() {
-            @Override
-            public String call() {
-                orderService.orderItem(itemId);
-                return "ok";
-            }
+        return traceTemplate.execute("OrderControllerV5.request", () -> {
+            orderService.orderItem(itemId);
+            return "ok";
         });
     }
 }
